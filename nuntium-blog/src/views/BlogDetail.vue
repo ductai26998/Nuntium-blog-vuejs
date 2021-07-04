@@ -30,17 +30,19 @@ export default {
 .blog {
   .image {
     width: 100%;
-    height: 250px;
+    height: 300px;
     background-repeat: no-repeat;
     background-size: cover;
   }
   .article {
+    padding: 0 40px !important;
     h3 {
       font-weight: 600;
       margin: 20px;
     }
     p {
       text-align: left;
+      text-align: justify;
     }
   }
 }

@@ -15,7 +15,9 @@
         >
           <img :src="item.image" alt="" />
           <div class="blog-info">
+            <h5 class="author">{{ item.author }}</h5>
             <h4>{{ item.title }}</h4>
+            <h5 class="release">{{ item.release }}</h5>
             <p>{{ item.sumary }}</p>
           </div>
         </b-list-group-item>
@@ -40,6 +42,5 @@ export default {
     background-repeat: no-repeat;
     background-size: cover;
   }
-
 }
 </style>
