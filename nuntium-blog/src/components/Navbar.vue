@@ -2,7 +2,7 @@
   <div>
     <b-nav class="d-flex justify-content-between w-100">
       <div class="d-flex">
-        <b-nav-item>
+        <b-nav-item @click="actived = 'home'">
           <router-link to="/">
             <img src="../assets/logo.png" alt="" />
           </router-link>
@@ -13,9 +13,7 @@
           >
         </b-nav-item>
         <b-nav-item @click="actived = 'about'">
-          <router-link to="/about" :class="actived == 'about' ? 'actived' : ''"
-            >About</router-link
-          >
+          <router-link to="/about" :class="actived == 'about' ? 'actived' : ''">About</router-link>
         </b-nav-item>
         <b-nav-item @click="actived = 'blogs'">
           <router-link to="/blogs" :class="actived == 'blogs' ? 'actived' : ''"
