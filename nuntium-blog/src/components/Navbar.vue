@@ -7,11 +7,21 @@
             <img src="../assets/logo.png" alt="" />
           </router-link>
         </b-nav-item>
-        <b-nav-item>
-          <router-link to="/">Home</router-link>
+        <b-nav-item @click="actived = 'home'">
+          <router-link to="/" :class="actived == 'home' ? 'actived' : ''"
+            >Home</router-link
+          >
         </b-nav-item>
-        <b-nav-item><router-link to="/about">About</router-link></b-nav-item>
-        <b-nav-item><router-link to="/blogs">Blogs</router-link></b-nav-item>
+        <b-nav-item @click="actived = 'about'">
+          <router-link to="/about" :class="actived == 'about' ? 'actived' : ''"
+            >About</router-link
+          >
+        </b-nav-item>
+        <b-nav-item @click="actived = 'blogs'">
+          <router-link to="/blogs" :class="actived == 'blogs' ? 'actived' : ''"
+            >Blogs</router-link
+          >
+        </b-nav-item>
       </div>
       <b-nav-item
         ><button class="login-btn" @click="$router.push('/auth/login')">
@@ -23,7 +33,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      actived: "home",
+    };
+  },
+};
 </script>
 
 <style scoped lang="scss">
@@ -31,7 +47,7 @@ $text-color: #222;
 
 * {
   color: $text-color;
-  font-family: 'FontAwesome';
+  font-family: "FontAwesome";
 }
 
 a {
@@ -42,6 +58,7 @@ a {
   .nav-item {
     align-items: center;
     display: flex;
+    font-weight: 600;
     img {
       height: 40px;
     }
@@ -51,6 +68,10 @@ a {
       background-color: transparent;
       padding: 0 10px;
     }
+  }
+
+  .actived {
+    color: gray;
   }
 }
 </style>
