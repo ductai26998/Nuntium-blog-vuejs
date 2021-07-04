@@ -24,15 +24,19 @@ export default {
   },
   computed: {
     secret() {
-      console.log(this.$cookies.get('secret'));
-      return this.$cookies.get('secret') ? this.$cookies.get('secret') : false;
-    }
+      console.log(this.$cookies.get("secret"));
+      return this.$cookies.get("secret") ? this.$cookies.get("secret") : false;
+    },
   },
   async created() {
-    const response = await axios.get(
-      "https://606b20daf8678400172e5aff.mockapi.io/users/blogs"
-    );
-    this.blogs = response.data;
+    try {
+      const response = await axios.get(
+        "https://606b20daf8678400172e5aff.mockapi.io/users/blogs"
+      );
+      this.blogs = response.data;
+    } catch {
+      alert("Can not get data!!!");
+    }
   },
 };
 </script>
