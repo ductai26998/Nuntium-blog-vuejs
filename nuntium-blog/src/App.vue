@@ -49,7 +49,7 @@ $text-color: #222;
 }
 
 * {
-  font-family: serif;
+  font-family: sans-serif;
   color: $text-color;
 }
 
