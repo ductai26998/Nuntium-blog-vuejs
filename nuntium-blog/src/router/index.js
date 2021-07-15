@@ -8,6 +8,8 @@ import Login from "../views/Login.vue";
 import Dashboard from "../views/Dashboard.vue";
 import BlogDetail from "../views/BlogDetail.vue";
 
+import Paginate from 'vuejs-paginate'
+
 import VueCookies from 'vue-cookies'
 
 import { BootstrapVue, IconsPlugin } from "bootstrap-vue"
@@ -21,6 +23,8 @@ Vue.use(IconsPlugin)
 Vue.use(VueRouter);
 Vue.use(axios, axios)
 Vue.use(VueCookies)
+
+Vue.component('paginate', Paginate)
 
 const routes = [
   {

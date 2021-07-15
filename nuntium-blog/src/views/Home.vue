@@ -5,7 +5,7 @@
       :style="{ backgroundImage: 'url(' + blogs[0].image + ')' }"
     ></div>
     <div class="main container">
-      <b-list-group class="blogs">
+      <b-list-group class="blogs" id="my-content">
         <h4 class="title">What's new</h4>
         <b-list-group-item
           @click="$router.push(/blogs/ + item.id)"

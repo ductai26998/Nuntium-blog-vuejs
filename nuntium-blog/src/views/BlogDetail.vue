@@ -35,7 +35,10 @@ export default {
     background-size: cover;
   }
   .article {
-    padding: 0 40px !important;
+    padding: 0 50px !important;
+    @media screen and (max-width: 460px) {
+      padding: 15px !important;
+    }
     h3 {
       font-weight: 600;
       margin: 20px;

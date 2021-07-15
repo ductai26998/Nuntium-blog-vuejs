@@ -69,7 +69,7 @@ a {
   }
 
   .actived {
-    color: gray;
+    color: #999999;
   }
 }
 </style>
