@@ -16,7 +16,9 @@ export default {
   name: "BlogDetail",
   props: ["blogs"],
   data() {
-    return {};
+    return {
+      hidden: true,
+    };
   },
   computed: {
     blog() {

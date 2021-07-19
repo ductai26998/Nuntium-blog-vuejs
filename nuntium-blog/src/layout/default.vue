@@ -1,19 +1,21 @@
 <template>
   <div class="default">
-    <Navbar></Navbar>
+    <Navbar :hidden.sync="hidden"></Navbar>
     <div class="main">
-      <router-view :blogs="blogs" />
+      <router-view :hidden.sync="hidden" :blogs="blogs" />
     </div>
 
-    <template>
-      <b-pagination
-        class="container justify-content-center"
-        v-model="currentPage"
-        :total-rows="61"
-        :per-page="10"
-      ></b-pagination>
-    </template>
-    <Footer></Footer>
+    <div class="footer" v-if="hidden == false">
+      <template>
+        <b-pagination
+          class="container justify-content-center"
+          v-model="currentPage"
+          :total-rows="61"
+          :per-page="10"
+        ></b-pagination>
+      </template>
+      <Footer></Footer>
+    </div>
   </div>
 </template>
 
@@ -28,6 +30,7 @@ export default {
     return {
       perPage: 10,
       currentPage: 1,
+      hidden: false,
     };
   },
   components: {
@@ -37,7 +40,7 @@ export default {
   watch: {
     currentPage(val) {
       this.$emit("update:currentPage", val);
-    },
+    }
   },
   methods: {},
 };
@@ -45,8 +48,6 @@ export default {
 
 <style scoped lang="scss">
 .default {
-  .main {
-    min-height: 60vh;
-  }
 }
+
 </style>

@@ -1,6 +1,10 @@
 <template>
   <div id="app">
-    <Default :blogs="blogs" :currentPage.sync="currentPage" v-if="secret != 'true'"></Default>
+    <Default
+      :blogs="blogs"
+      :currentPage.sync="currentPage"
+      v-if="secret != 'true'"
+    ></Default>
     <Secret :blogs="blogs" v-if="secret == 'true'"></Secret>
     <!-- <router-view :blogs="blogs" v-bind:secret.sync="secret" /> -->
   </div>
@@ -52,7 +56,7 @@ export default {
           "&limit=" +
           this.perPage
       );
-      console.log(response)
+      console.log(response);
       this.blogs = response.data;
     } catch {
       alert("Can not get data!!!");

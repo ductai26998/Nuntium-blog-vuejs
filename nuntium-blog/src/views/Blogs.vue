@@ -3,16 +3,16 @@
     <h4 class="title">Blogs</h4>
     <b-list-group class="blogs">
       <b-list-group-item
-        @click="$router.push(/blogs/ + item.id)"
+        @click="gotoDetail(item)"
         class="blog-item"
         v-for="item in blogs"
         :key="item.id"
       >
         <img :src="item.image" alt="" />
         <div class="blog-info">
-          <h5 class="author">{{item.author}}</h5>
+          <h5 class="author">{{ item.author }}</h5>
           <h4>{{ item.title }}</h4>
-          <h5 class="release">{{item.release.slice(0,10)}}</h5>
+          <h5 class="release">{{ item.release.slice(0, 10) }}</h5>
           <p>{{ item.sumary }}</p>
         </div>
       </b-list-group-item>
@@ -26,6 +26,12 @@ export default {
   props: ["blogs"],
   data() {
     return {};
+  },
+  methods: {
+    gotoDetail(item) {
+      // this.$emit("update:hidden", true);
+      this.$router.push(/blogs/ + item.id);
+    },
   },
   components: {},
   computed: {},

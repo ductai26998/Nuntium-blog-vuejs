@@ -33,9 +33,9 @@
 export default {
   methods: {
     update() {
-      this.$cookies.set('secret', true);
+      this.$cookies.set("secret", true);
       // this.$router.go("/dashboard");
-      this.$router.push('/dashboard');
+      this.$router.push("/dashboard");
       this.$router.go();
     },
   },
@@ -53,12 +53,13 @@ $text-color: #222;
   position: relative;
   height: 100%;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 100px;
   .wrapper {
     width: 300px;
-    position: absolute;
-    top: -50%;
-    left: 50%;
-    transform: translate(-50%, 50%);
+    padding-bottom: 50px;
+
     h4 {
       font-weight: 600;
     }
